@@ -1,0 +1,200 @@
+:root {
+  --bg-light: #f5f5f5;
+  --bg-dark: #1c1f26;
+  --text-light: #000;
+  --text-dark: #fff;
+}
+
+/* === Global === */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg-light);
+  color: var(--text-light);
+  transition: background 0.3s, color 0.3s;
+}
+
+body.dark {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+/* === Navbar === */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(120deg, #703688, #1d6fa5); /* gradasi ungu-biru */
+  color: white;
+  padding: 12px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar h1 {
+  margin: 0;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-actions button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.2s;
+}
+
+.nav-actions button:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+/* === Editor Panel === */
+.editor-panel {
+  display: none;
+  padding: 15px;
+  margin-top: 10px;
+  background: #eee;
+  flex-direction: column;
+  gap: 15px;
+}
+
+body.dark .editor-panel {
+  background: #2a2d34;
+}
+
+/* === Layout Editor === */
+.editor-row {
+  display: flex;
+  gap: 15px;
+}
+
+.editor-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header setiap editor */
+.editor-header.html {
+  background: #e53935; /* merah */
+  color: white;
+  padding: 6px;
+  font-size: 14px;
+  border-radius: 4px 4px 0 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.editor-header.css {
+  background: #43a047; /* hijau */
+  color: white;
+  padding: 6px;
+  font-size: 14px;
+  border-radius: 4px 4px 0 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.editor-header.js {
+  background: #fb8c00; /* oranye */
+  color: white;
+  padding: 6px;
+  font-size: 14px;
+  border-radius: 4px 4px 0 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* === CodeMirror (Editor) === */
+.CodeMirror {
+  height: 250px;
+  border: 1px solid #ccc;
+  border-radius: 0 0 4px 4px;
+  font-size: 14px;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto; /* scroll horizontal untuk kode panjang */
+}
+
+/* Default: teks hitam di light mode */
+body:not(.dark) .CodeMirror {
+  color: #000 !important;
+}
+
+/* Darcula theme otomatis handle dark mode, tidak perlu override */
+
+/* Pastikan line number rapi */
+.CodeMirror pre {
+  white-space: pre !important;
+  word-wrap: normal !important;
+}
+
+.CodeMirror-gutters {
+  width: 40px !important;
+  background: #f7f7f7;
+  border-right: 1px solid #ddd;
+}
+
+.CodeMirror-lines {
+  padding-left: 5px !important;
+}
+
+/* === Run button === */
+.run-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+#runCode {
+  background: #8e44ad;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+#runCode:hover {
+  background: linear-gradient(120deg, #8e44ad, #3498db);
+}
+
+/* === Preview === */
+#preview {
+  width: 100%;
+  height: calc(100vh - 60px);
+  border: none;
+}
+
+/* === Responsive: Mobile jadi 3 baris === */
+@media (max-width: 768px) {
+  .editor-row {
+    flex-direction: column;
+  }
+  .editor-column {
+    width: 100%;
+  }
+}
