@@ -20,13 +20,16 @@ It allows you to write code in three editors, switch between **light/dark mode**
 ---
 
 ## 🚀 Demo
-🔗 [Live Preview](https://s4rt4.github.io/mini_editor)
+🔗 [Live Preview](https://s4rt4.github.io/simplenote)
 
 ---
 
+## 🖼️ Preview
+![Preview](simplenote.png)
+
+---
 
 ## 📦 Installation
 1. Clone this repository:
    ```bash
-   git clone https://github.com/s4rt4/mini_editor.git
-
+   git clone https://github.com/s4rt4/simplenote.git
