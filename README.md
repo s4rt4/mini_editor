@@ -3,6 +3,7 @@
 A lightweight **HTML, CSS, and JavaScript playground** built with vanilla JS and [CodeMirror](https://codemirror.net/).  
 It allows you to write code in three editors, switch between **light/dark mode**, and see the result instantly in the live preview.
 
+![ss](ss.png)
 ---
 
 ## ✨ Features
@@ -33,3 +34,4 @@ It allows you to write code in three editors, switch between **light/dark mode**
 1. Clone this repository:
    ```bash
    git clone https://github.com/s4rt4/simplenote.git
+
